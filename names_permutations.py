@@ -1,3 +1,5 @@
+# Example: python names_permutations.py -f firstname -l lastname
+
 import sys
 import argparse
 
