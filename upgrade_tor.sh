@@ -1,5 +1,5 @@
 LAST=`curl -s https://gitweb.torproject.org/tor.git/plain/ChangeLog 2> /dev/null | head -1 | sed 's/.*version //' | cut -d ' ' -f 1`
-CURR=`tor --version | head -1 | sed 's/.*version //' | sed s'/\.$//'`
+CURR=`/usr/local/bin/tor --version | head -1 | sed 's/.*version //' | sed s'/\.$//'`
 
 if [[ $LAST = $CURR ]]
 then
@@ -17,4 +17,4 @@ cd tor-$LAST
 make
 make install
 echo "Upgraded Tor to version $LAST from $CURR"
-reboot
+/sbin/reboot
